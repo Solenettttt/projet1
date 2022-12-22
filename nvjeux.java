@@ -32,7 +32,7 @@ public class nvjeux {
 		for (int i=0;i<3;i++){
 			for (int j = 0; j < 3; j++) {  
 				for (int h = 0; h < 3; h++) {
-					JEUX[i][j][h]=O;
+					JEUX[i][j][h]="O";
 					System.out.print("    "+JEUX[i][j][h]+"    |"); 
 					
 				}
@@ -91,16 +91,16 @@ public class nvjeux {
 			
 			
 			/*initialisation des joueurs et leurs pions*/
-        public static void Lancerpartie1vs1( String j1, String j2, String p1, string p2, int js ) {       
+        public static void Lancerpartie1vs1( String J1, String j2, String p1, String p2, int js ) {       
        
-       
+       //ici j1 j2 ont ils besoin d'etre les meme quenjai utlisé pour appeler la fonction dnas le amin? ya til une difference
         /*int i;*/
         
     
         System.out.println("___________________\n"+"Partie 1vs1\n"+"___________________");
         
         System.out.println("Prenom du joueur 1 :");
-        j1 = Lire.S();
+        J1 = Lire.S();
         
         System.out.println("  \n"+"Par quelle lettre souhaitez vous representer vos pions?");
         p1= Lire.S();
@@ -108,7 +108,7 @@ public class nvjeux {
         System.out.println(" \n"+"Prénom du joueur 2 : ");
         j2 = Lire.S();
         
-			while (j1 == j2){
+			while (J1 == j2){
 			System.out.println(" \n"+"Donnez un autre prenom joueur 2 : ");
 			j2 = Lire.S();
 			}
@@ -130,7 +130,10 @@ public class nvjeux {
 			int[][] pions = new int[4][3];
 			int i;
 			
-			switch(js){
+			switch(js){					/*si js egale 0 rien ne se passe*/
+				case(1):i=2;
+				break;
+				
 				case(2):i=2;/* switch car pour que cela fonctionne aussi pour 2 joueurs 2 couleurs*/
 				break;
 				
@@ -147,7 +150,7 @@ public class nvjeux {
 						}
 					}
 				
-				return pions;
+				//return pions;
 			}
 			
 			
@@ -186,7 +189,7 @@ public class nvjeux {
         
         System.out.println(" C'est au tour de "+ja+" de jouer:");
 
-        System.out.println(" \n"+ + " veuillez selectionner un type de pion:\n"+"0 pour petit;\n"+"1 pour moyen;\n"+"2 pour grand"); 
+        System.out.println(" \n"+ ja + " veuillez selectionner un type de pion:\n"+"0 pour petit;\n"+"1 pour moyen;\n"+"2 pour grand"); 
 
         typeDePions = Lire.i();
         
@@ -199,14 +202,14 @@ public class nvjeux {
 			
 			}
 			
-			while (pionssj[typeDePions][JA]==0){
+			while (pionsj[typeDePions][JA]==0){
 		
-			System.out.println(J1 + " veuillez selectionner un type de pion car vous n'avez plus de ce pions"); 
+			System.out.println(ja + " veuillez selectionner un type de pion car vous n'avez plus de ce pions"); 
 
 			typeDePions = Lire.i();
-			
+			}
 			return typeDePions;
-			}}
+			}
 			
 		
         
@@ -224,14 +227,14 @@ public class nvjeux {
         
         while (ligne!=0 || ligne!=1 || ligne!=2){
 			
-			System.out.println(jaa+", l'emplacement que vous avez choisi n'est pas possible");
+			System.out.println(ja+", l'emplacement que vous avez choisi n'est pas possible");
 			
 			System.out.println("Choisissez une ligne sur laquelle vous placez votre pion:\n"+"0 pour la première ligne\n"+"1 pour la deuxieme ligne\n"+"2 pour la troisieme ligne\n");
 
         ligne = Lire.i();
-        
+	}
         return ligne;
-	}}
+	}
 	
 	
         
@@ -239,7 +242,7 @@ public class nvjeux {
 		public static int choisircolonne( String ja) {
 		int  colonne;
 		
-        System.out.println(pa+" choisissez la colonne sur laquelle vous placez votre pion:\n"+"0 pour la première colonne\n"+"1 pour la deuxieme colonne\n"+"2 pour la troisieme colonne\n");
+        System.out.println(ja+" choisissez la colonne sur laquelle vous placez votre pion:\n"+"0 pour la première colonne\n"+"1 pour la deuxieme colonne\n"+"2 pour la troisieme colonne\n");
 
         colonne = Lire.i();
         
@@ -249,54 +252,34 @@ public class nvjeux {
 			
 			System.out.println("Choisissez une colonne sur laquelle vous placez votre pion:\n"+"0 pour la première ligne\n"+"1 pour la deuxieme ligne\n"+"2 pour la troisieme ligne\n");
 
-        colonne = Lire.i();
-        
+        colonne = (int)Lire.i();
+    	}    
         return colonne;
-	}
-        
+
+		}
         
         	/*ici on vérifier si il est possible d'utiliser le pion et lemplacent choisi dans le jeu*/
-			public static int possible(int[][][] plateaux, String ja, int colonne,  int ligne, int pion) {
-		
+			public static int possible(String[][][] plateaux, String ja, int colonne,  int ligne, int pion) {
+			
+			int rep;
 	
-			if(plateaux[ligne][colonne][pion]!=0){
+			if(plateaux[ligne][colonne][pion]!="O"){
 				
 				System.out.println(ja+", l'emplacement que vous avez choisi n'est pas libre. n/"+" Veuillez choisir de nouveau");
 				
-				int rep=0;
+				rep=0;
 			}else{
 			 rep = 1;
 			 }
 		return rep;
 		
 		}
-	if (
-        plateaux[nLigne][nColonne][t]=paa;
-        
-        return plateaux;
-        
-        }
-        
-      
-      		/*ici on vérifier si il est possible d'utiliser le pion et lemplacent choisi dans le jeu*/
-			public static int possible(int[][][] plateaux, String ja, int JA, int colonne,  int ligne, int pion) {
-		
 	
-			if(plateaux[ligne][colonne][pion]!=0){
-				
-				System.out.println(ja+", l'emplacement que vous avez choisi n'est pas libre. n/"+" Veuillez choisir de nouveau");
-				
-				int rep=0;
-			}else{
-			 rep = 1;
-			 }
-		return rep;
-		
-		}
+        
 			
 			
 			/*pour enlever pions de la matrice de pions*/
-			public static int enlevepions(String ja, int JA, int typeDePions){
+			public static int[][] enlevepions(String ja, int JA, int typeDePions){
 				
 			int[][] pionsj = new int[4][3];
 			
@@ -316,10 +299,10 @@ public class nvjeux {
 		public static void main (String[] args) {
 		
 		
-		System.out.println("Bienvenur au jeux otrio");
+		System.out.println("Bienvenue au jeux otrio");
 	
 			
-		String JEU [][][] = new String[3][3][3];	/*plateau de jeu, puisque je defini les pions par des lettre on a des String*/
+		String JEU [][][] = new String [3][3][3];	/*plateau de jeu, puisque je defini les pions par des lettre on a des String*/
 		 plateauvide(JEU);
 		 
 		int[][] pionsJ = new int[4][3];		/*matrice des pions des joueru*/
@@ -327,21 +310,27 @@ public class nvjeux {
 		String Pa, Ja;				/*pions= actuel et joueur acteul*/
 		int C, L, pion;				/*colonne ligne et type de pions que je joueur actuel choisi*/
 		
-		/*on ne peut placer que 27 pions de=ans le plateau*/
+		String J1, J2; 		/*ici le nom des joueur*/
+		String P1, P2;		/*le nom de leurs pions*/
+			
+		/*on ne peut placer que 27 pions de=ans le plateau*/    	/*à ajouter les conditions de victoire ici avec un while*/
 		while (p<28){
 			
 			
 			int Js=menu();		/*Js=joueurs;, utilisé d'abord pour le type de partie puis pour le nombre de joueurs*/
 			
-			/* en focntion de menu, on defini le type de jeu qu'on joue et met en place les variables qu'on va utiliser*/
+			/* en fonction de menu, on defini le type de jeu qu'on joue et met en place les variables qu'on va utiliser*/
 			if (Js==1){
 			Js=2;		 /*ici le nombre de joueurs*/
-			String J1, J2; /*ici le nom des joueur*/
-			String P1, P2;		/*le nom de leurs pions*/
 			
 			/*on defini nom et pions avec cette procedure*/
 			Lancerpartie1vs1( J1, J2, P1, P2, Js );
-		
+			
+				J1 = " ";
+				J2 = " ";
+				P1 = " ";
+				P2 = " ";
+
 			}
 		/*apres avoir définit les joueur on peut commencer par remplir la matrice de pions*/
 		remplissagepionJ ( Js, pionsJ);
@@ -352,7 +341,8 @@ public class nvjeux {
 		if (JA==0){			
 				Ja=J1;
 				Pa=P1;
-				}else{
+				}
+				else{
 					Ja=J2;
 					Pa=P2;
 					}
@@ -363,7 +353,7 @@ public class nvjeux {
 				pion=choisirpions( pionsJ, Js, Ja, JA);
 				C=choisircolonne( Ja);
 				L=choisirligne( Ja);
-				i=possible(JEU,Ja, JA, C, L , pion);
+				i=possible(JEU,Ja, C, L , pion);
 			
 			}
 			
@@ -373,8 +363,6 @@ public class nvjeux {
 				
 				
 				JEU[L][C][pion]=Pa;
-				
-			tourJoueurs(JEU, pionsJ, Js, Ja,  Pa);
 			
 			
 			p=p+1;
@@ -382,5 +370,3 @@ public class nvjeux {
 			}
 	}}
 		
-			
-			
