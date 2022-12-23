@@ -334,9 +334,12 @@ public class nvjeux2 {
 		
 
  
+	
 			
 		public static void main (String[] args) {
 		
+		int J=1;
+		while(J==1){		//boucle pour rejouer la partie
 		
 		System.out.println("Bienvenue au jeux otrio");
 	
@@ -374,7 +377,7 @@ public class nvjeux2 {
 		int JA=p%nb; 	///*JA pour le joueur actuel en nombre= joueur n1.joueur n2.joueur n°3... et Ja est le nom en caractere du joueur actuel*/
 
 		if (quel_jeux==2){
-			JA=p%4;				///*module pour definir quel joueur joue pour chaque tours pour 1vs1 2 couelur*/
+			JA=p%4;				///*module pour definir quel joueur joue pour chaque tours pour 1vs1 2 couelur, on peut garder seulement ce if pour faire version 1vs1 2couleur
 			if (JA==0){			
 				Ja=nom[0];
 				Pa="U";
@@ -432,9 +435,12 @@ public class nvjeux2 {
 			
 			}
 			//A FAIRE:rediger qui a gagné et ne pas oublier que le cas 1vs1 deux couleurs où il faudra donner le bon nom du joueur qui gagne
+	
+		System.out.println("Voulez vous refaire une parie?\n"+"0=finir\n"+"1=rejouer");
+		J=Lire.i();
+	}
 	}}
 		
-			
 			
 			
 
