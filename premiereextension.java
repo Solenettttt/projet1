@@ -372,8 +372,16 @@ public class premiereextension {
 
             /////*apres avoir définit les joueur on peut remplir la matrice de pions*/
             remplissagepionJ(Js, pionsJ);
+		
+	    int n;
+            if (Js == 1 || Js == 5) {
+                n = 18;
+            } else {
+                n = 27;
+            }
+            // définit le nb de tour max par type de partie (cas d'égalité si pas de conditions de victoire)
 
-            while (p < nbToursMax(p) && CondVictoire(JEU, Pa, Ja) == false) {		//	A FAIRE: ajouter les condition de victoire avec dans while
+            while (p < n && CondVictoire(JEU, Pa, Ja) == false) {		//	A FAIRE: ajouter les condition de victoire avec dans while
                 int JA = p % nb; 	///*JA pour le joueur actuel en nombre= joueur n1.joueur n2.joueur n°3... et Ja est le nom en caractere du joueur actuel*/
 
                 if (quel_jeux == 2) {
@@ -486,16 +494,4 @@ public class premiereextension {
         }
         return victoire;
     }
-
-public static int nbToursMax(int js) {
-        int p;
-        if (js == 1 || js == 5) {
-            p = 19;
-        } else {
-
-            p = 28;
-        }
-        return p;
-    }
-
 }
