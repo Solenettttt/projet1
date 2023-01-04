@@ -446,47 +446,36 @@ public class premiereextension {
                 if (plateau[k][0][i] == Pa && plateau[k][1][i] == Pa && plateau[k][2][i] == Pa && plateau[k][0][i] != "O") {    //victoire lignes
                     System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
                     victoire = true;
-                }
-
-                if (plateau[0][k][i] == Pa && plateau[1][k][i] == Pa && plateau[2][k][i] == Pa && plateau[0][k][i] != "O") {       // victoire colonnes 
+                } else if (plateau[0][k][i] == Pa && plateau[1][k][i] == Pa && plateau[2][k][i] == Pa && plateau[0][k][i] != "O") {       // victoire colonnes 
                     System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
                     victoire = true;
-                }
-            }
-        }
-        for (k = 0; k < 3; k++) {
-            for (i = 0; i < 3; i++) {
-                if (plateau[k][i][0] == Pa && plateau[k][i][1] == Pa && plateau[k][i][2] == Pa && plateau[k][i][0] != "O") {
+                } else if (plateau[k][i][0] == Pa && plateau[k][i][1] == Pa && plateau[k][i][2] == Pa && plateau[k][i][0] != "O") {
                     System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
                     victoire = true;       // victoire sur la même case
-                }
-                if (plateau[k][1][1] == Pa || plateau[1][i][1] == Pa) {
-                    if (plateau[0][0][0] == Pa || plateau[0][0][2] == Pa) {
-                        if (plateau[0][2][0] == Pa || plateau[0][2][2] == Pa) { // 1ere ligne
-                            System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
-                            victoire = true;
-                        } else if (plateau[2][0][0] == Pa || plateau[2][0][2] == Pa) { //1ere colonne
-                            System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
-                            victoire = true;
-                        } else if (plateau[2][2][0] == Pa || plateau[2][2][2] == Pa) { // 1ere diagonale
-                            System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
-                            victoire = true;
-                        }
-                    } else if ((plateau[2][0][0] == Pa || plateau[2][0][2] == Pa) && (plateau[2][2][0] == Pa || plateau[2][2][2] == Pa)) { // 3eme ligne
+                } else if (plateau[k][1][1] == Pa || plateau[1][i][1] == Pa) {
+                    if ((plateau[0][0][0] == Pa && plateau[0][2][2] == Pa) || (plateau[0][0][2] == Pa && plateau[0][2][0] == Pa)) { // 1ere ligne
                         System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
                         victoire = true;
-                    } else if ((plateau[1][0][0] == Pa || plateau[1][0][2] == Pa) && (plateau[1][2][0] == Pa || plateau[1][2][2] == Pa)) { // 2eme ligne
+		    } else if ((plateau[1][0][0] == Pa && plateau[1][2][2] == Pa) || (plateau[1][0][2] == Pa && plateau[1][2][0] == Pa)) { // 2eme ligne
+                        System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
+                        victoire = true;  
+		    } else if ((plateau[2][0][0] == Pa && plateau[2][2][2] == Pa) || (plateau[2][0][2] == Pa && plateau[2][2][0] == Pa)) { // 3eme ligne
+                        System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
+                        victoire = true;	    
+                    } else if ((plateau[0][0][0] == Pa && plateau[2][0][2] == Pa) || (plateau[0][0][2] == Pa && plateau[2][0][0] == Pa)) {  //1ere colonne
                         System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
                         victoire = true;
+                    } else if ((plateau[0][1][0] == Pa && plateau[2][1][2] == Pa) || (plateau[0][1][2] == Pa && plateau[2][1][0] == Pa)) { // 2eme colonne
+                        System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
+                        victoire = true;
+                    } else if ((plateau[0][2][0] == Pa && plateau[2][2][2] == Pa) || (plateau[0][2][2] == Pa && plateau[2][2][0] == Pa)) { // 3eme colonne
+                        System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
+                        victoire = true;
+		    } else if ((plateau[0][0][0] == Pa && plateau[2][2][2] == Pa) || (plateau[0][0][2] == Pa && plateau[2][2][0] == Pa)) { // 1ere diagonale
+                        System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
+                        victoire = true;	    
 
-                    } else if ((plateau[0][1][0] == Pa || plateau[0][1][2] == Pa) && (plateau[2][1][0] == Pa || plateau[2][1][2] == Pa)) { // 2eme colonne
-                        System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
-                        victoire = true;
-                    } else if ((plateau[0][2][0] == Pa || plateau[0][2][2] == Pa) && (plateau[2][2][0] == Pa || plateau[2][2][2] == Pa)) { // 3eme colonne
-                        System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
-                        victoire = true;
-
-                    } else if ((plateau[0][2][0] == Pa || plateau[0][2][2] == Pa) && (plateau[2][0][0] == Pa || plateau[2][0][2] == Pa)) { // 2eme diagonale
+                    } else if ((plateau[0][2][0] == Pa && plateau[2][0][2] == Pa) || (plateau[0][2][2] == Pa && plateau[2][0][0] == Pa)) { // 2eme diagonale
                         System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
                         victoire = true;
                     }
