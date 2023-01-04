@@ -1,7 +1,7 @@
 /*
  * premiereextension.java
  * 
- * Copyright 2023 Thuy <Thuy@RICHARD_LENOVO>
+ * Copyright 2023 strieu01 <strieu01@SEC-C212-F15>
  * 
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ public class premiereextension {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 for (int h = 0; h < 3; h++) {
-                    JEUX[i][j][h] = "O";
+                    JEUX[i][h][j] = "O";
                     System.out.print("    " + JEUX[i][h][j] + "    |");
 
                 }
@@ -123,19 +123,25 @@ public class premiereextension {
 
         int i;
 
-        i = switch (js) {
-            case 1 ->
-                2;
-            case 2 ->
-                2;
-            case 3 ->
-                3;
-            case 4 ->
-                4;
-            case 5 ->
-                2;
-            default ->
-                0;
+                
+			switch(js){					
+				case(1):i=2;
+				break;
+				
+				case(2):i=2;
+				break;
+				
+				case(3):i=3;
+				break;
+				
+				case(4):i=4;
+				break;
+				
+				case(5):i=2;
+				break;
+				
+				default: i=0;
+				break;
         };
         /* switch car pour que cela fonctionne aussi pour 2 joueurs 2 couleurs*/
         return i;
@@ -144,19 +150,25 @@ public class premiereextension {
     /*remplissage matrice pions des joueurs*/
     public static void remplissagepionJ(int js, int[][] pionsJ) {
         int i;
-        i = switch (js) {
-            case 1 ->
-                2;
-            case 2 ->
-                4;
-            case 3 ->
-                3;
-            case 4 ->
-                4;
-            case 5 ->
-                2;
-            default ->
-                0;
+   
+                switch(js){					
+				case(1):i=2;
+				break;
+				
+				case(2):i=4;
+				break;
+				
+				case(3):i=3;
+				break;
+				
+				case(4):i=4;
+				break;
+				
+				case(5):i=2;
+				break;
+				
+				default: i=0;
+				break;
         };
         /* switch car pour que cela fonctionne aussi pour 2 joueurs 2 couleurs*/
         System.out.println("   ");
@@ -284,19 +296,25 @@ public class premiereextension {
     /*pour enlever pions de la matrice de pions et affiche*/
     public static void enlevepions(int[][] pionsj, String ja, int JA, int typeDePions, String[] nom, int js) {
         int i;
-        i = switch (js) {
-            case 1 ->
-                2;
-            case 2 ->
-                4;
-            case 3 ->
-                3;
-            case 4 ->
-                4;
-            case 5 ->
-                2;
-            default ->
-                0;
+        
+          switch(js){					
+				case(1):i=2;
+				break;
+				
+				case(2):i=4;
+				break;
+				
+				case(3):i=3;
+				break;
+				
+				case(4):i=4;
+				break;
+				
+				case(5):i=2;
+				break;
+				
+				default: i=0;
+				break;
         };
         if (js == 2) {
             pionsj[typeDePions][JA] = pionsj[typeDePions][JA] - 1;
