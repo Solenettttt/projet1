@@ -431,6 +431,12 @@ public class ext {
                 } else if (plateau[k][i][0] == Pa && plateau[k][i][1] == Pa && plateau[k][i][2] == Pa && plateau[k][i][0] != "O") {
                     System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
                     victoire = true;       // victoire sur la même case
+	       } else if (plateau[k][0][0] == Pa && plateau[k][1][1] == Pa && plateau[k][2][2] == Pa && plateau[k][i][0] != "O"){
+		    System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
+                    victoire = true;   // victoire ascendante/descendante sur diagonale 1
+	       } else if (plateau[k][0][2] == Pa && plateau[k][1][1] == Pa && plateau[k][2][0] == Pa && plateau[k][i][0] != "O"){
+		       System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
+                    victoire = true;   // victoire ascendante/descendante sur diagonale 2  
                 } else if ((plateau[0][1][1] == Pa) && ((plateau[0][0][0] == Pa && plateau[0][2][2] == Pa) || (plateau[0][0][2] == Pa && plateau[0][2][0] == Pa))) { // 1ere ligne
                     System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
                     victoire = true;
