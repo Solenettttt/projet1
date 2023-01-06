@@ -109,6 +109,9 @@ public class ext {
 				case(5):i=2;
 				break;
 				
+				case(6):i=2
+			        break;
+					
 				default: i=0;
 				break;
         };
