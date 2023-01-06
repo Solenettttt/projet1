@@ -470,6 +470,165 @@ public class ext {
 
         return victoire;
     }
+	
+	
+// fonction de l'ia intermédiaire.
+	
+        while (p < n && CondVictoire(JEU, Pa, Ja) == false) {	
+                int JA = 0; 
+                if (Js == 6) {
+                    JA = p % 4;				///*modulo pour definir quel Ja et Ja pour chaque tours pour 1vs1 2 coueleur
+                    if (JA == 0) {
+                        Ja = nom[0];
+		      Je = nom[0]
+                        Pa = "U";
+			 Pe = "R";   
+                    } else if (JA == 1) {
+                        Ja = nom[1];
+			    Je = nom[1] 
+                        Pa = "D";
+			     Pe = "R"; 
+                    } else if (JA == 2) {
+                        Ja = nom[0];
+			     Je = nom[2]
+                        Pa = "T";
+			     Pe = "R"; 
+                    } else if (JA == 3) {
+                        Ja = nom[1];
+			     Je = nom[3]
+                        Pa = "Q";
+			     Pe = "R"; 
+                    }
+                } else {
+		          JA = p % nb;	     		// "R" est le pion de l'algorithme (non par défaut car il n'est pas modifiable à travers les commandes du menu)		
+                    if (JA == 0) {
+                        JA = p % nb;			
+                        Ja = nom[0];
+			     Je = nom[0]
+                        Pa = "U";
+			     Pe = "R"; 
+                    } else if (JA == 1) {
+                        Ja = nom[1];
+			     Je = nom[1]
+                        Pa = "D";
+			     Pe = "R"; 
+                    } else if (JA == 2) {
+                        Ja = nom[2];
+			     Je = nom[2]
+                        Pa = "T";
+			     Pe = "R"; 
+                    } else if (JA == 3) {
+                        Ja = nom[3];
+			     Je = nom[3]
+                        Pa = "Q"; 
+			     Pe = "R"; 
+        } public static int Danger(String[][][] plateau, String Pa, String Ja, String Pe) { 
+		
+        boolean meilleurcoup = false;
+        int i, j, k;
+        for (k = 0; k < 3; k++) {
+            for (i = 0; i < 3; i++) {
+               if (plateau[k][0][i] == Pa && plateau[k][1][i] == Pa && plateau[k][2][i] == Pa && plateau[k][0][i] != "O"){    
+	            public static boolean CondVictoire(String[][][] plateau, String Pa, String Ja) {
+        boolean victoire = false;
+        int i, j, k;
+        for (k = 0; k < 3; k++) {
+            for (i = 0; i < 3; i++) {
+               if (plateau[k][0][i] == Pa && plateau[k][1][i] == Pa && plateau[k][0][i] != "O") {    //victoire lignes même taille
+	       plateau[k][2][i] == Pe;
+	       if (plateau[k][0][i] == Pa && plateau[k][2][i] == Pa && plateau[k][0][i] != "O") {    //victoire lignes même taille
+	       plateau[k][1][i] == Pe;
+	        if (plateau[k][2][i] == Pa && plateau[k][0][i] != "O") {    // bloquer lorsque 2 pions adverses de même taille sont alignés sur la même ligne
+	       plateau[k][0][i] == Pe;
+                    meilleurcoup = true;
+		    
+                } else if (plateau[1][k][i] == Pa && plateau[2][k][i] == Pa && plateau[0][k][i] != "O") {      
+	         plateau[0][k][i] = Pe;
+		if (plateau[1][k][i] == Pa && plateau[0][k][i] == Pa && plateau[0][k][i] != "O") {
+		 plateau[2][k][i] = Pe;
+		if (plateau[0][k][i] == Pa && plateau[2][k][i] == Pa && plateau[0][k][i] != "O") {
+		 plateau[1][k][i] = Pe;
+		    meilleurcoup = true;   // bloquer lorsque 2 pions adverses de même taille sont alignés sur la même colonne
+                 
+                } else if (plateau[k][i][1] == Pa && plateau[k][i][2] == Pa && plateau[k][i][0] != "O") {
+		 plateau[0][k][i] = Pe;
+		if (plateau[0][k][i] == Pa && plateau[2][k][i] == Pa && plateau[0][k][i] != "O") {
+		 plateau[1][k][i] = Pe;
+		if (plateau[0][k][i] == Pa && plateau[1][k][i] == Pa && plateau[0][k][i] != "O") {
+		 plateau[2][k][i] = Pe;
+		    meilleurcoup = true;  // bloquer lorsque 2 pions adverses sont sur la même case
+		    
+                       
+                } else if ((plateau[0][1][1] == Pa) && (plateau[0][0][0] == Pa || plateau[0][2][0] == Pa)) { // 1ere ligne
+                  plateau[0][2][2] = Pe || plateau[0][0][2] = Pe;
+	        } else if ((plateau[0][1][1] == Pa) && (plateau[0][2][2] == Pa || plateau[0][0][2] == Pa)) {
+		  plateau[0][0][0] = Pe || plateau[0][2][0] = Pe;
+		   meilleurcoup = true;
+		   
+                  } else if ((plateau[2][1][1] == Pa) && (plateau[2][0][0] == Pa || plateau[2][0][2] == Pa)) {  
+                 plateau[2][2][2] = Pe; 
+		  } else if ((plateau[2][1][1] == Pa) && (plateau[2][0][0] == Pa || plateau[2][0][2] == Pa)) {  
+		 plateau[2][2][0] = Pe;
+	        } else if ((plateau[2][1][1] == Pa) && (plateau[2][2][2] == Pa || plateau[2][2][0] == Pa)) {
+		  plateau[2][0][0] = Pe 
+		   } else if ((plateau[2][1][1] == Pa) && (plateau[2][2][2] == Pa || plateau[2][2][0] == Pa)) {
+		  plateau[2][0][2] = Pe;
+		  meilleurcoup = true;
+		    
+		  } else if ((plateau[1][0][1] == Pa) && (plateau[0][0][0] == Pa || plateau[0][0][2] == Pa)) {  
+                 plateau[2][0][2] = Pe;
+		  } else if ((plateau[1][0][1] == Pa) && (plateau[0][0][0] == Pa || plateau[0][0][2] == Pa)) { 
+		 plateau[2][0][0] = Pe;
+	       } else if ((plateau[1][0][1] == Pa) && (plateau[0][0][0] == Pa || plateau[0][0][2] == Pa)) { 
+		  plateau[0][0][0] = Pe;
+		  } else if ((plateau[0][1][1] == Pa) && (plateau[0][0][0] == Pa || plateau[0][2][0] == Pa)) {
+		   plateau[0][0][2] = Pe;
+                     meilleurcoup = true;
+		     
+                   } else if ((plateau[1][1][1] == Pa) && (plateau[0][1][0] == Pa || plateau[0][1][2] == Pa)) {  
+                 plateau[2][1][2] = Pe;
+		  } else if ((plateau[1][1][1] == Pa) && (plateau[0][1][0] == Pa || plateau[0][1][2] == Pa)) {  
+		 plateau[2][1][0] = Pe;
+	        } else if ((plateau[1][1][1] == Pa) && (plateau[2][1][2] == Pa || plateau[2][1][0] == Pa)) {
+		  plateau[0][1][0] = Pe;
+		   } else if ((plateau[1][1][1] == Pa) && (plateau[2][1][2] == Pa || plateau[2][1][0] == Pa)) {
+		  plateau[0][1][2] = Pe;
+		   meilleurcoup = true;
+		   
+                        } else if ((plateau[1][2][1] == Pa) && (plateau[0][2][0] == Pa || plateau[0][2][2] == Pa)) {  
+                 plateau[2][2][2] = Pe;
+		  } else if ((plateau[1][2][1] == Pa) && (plateau[0][2][0] == Pa || plateau[0][2][2] == Pa)) {  
+		 plateau[2][2][0] = Pe;
+	        } else if ((plateau[1][1][1] == Pa) && (plateau[2][2][2] == Pa || plateau[2][2][0] == Pa)) {
+		  plateau[0][2][0] = Pe;
+		  } else if ((plateau[1][1][1] == Pa) && (plateau[2][2][2] == Pa || plateau[2][2][0] == Pa)) {
+		  plateau[0][2][2] = Pe;
+		   meilleurcoup = true;
+		   
+                 } else if ((plateau[1][1][1] == Pa) && (plateau[0][0][0] == Pa || plateau[0][0][2] == Pa)) {  
+                 plateau[2][2][2] = Pe;
+		  } else if ((plateau[1][1][1] == Pa) && (plateau[0][0][0] == Pa || plateau[0][0][2] == Pa)) {  
+		 plateau[2][2][0] = Pe;
+	        } else if ((plateau[1][1][1] == Pa) && (plateau[2][2][2] == Pa || plateau[2][2][0] == Pa)) {
+		  plateau[0][0][0] = Pe;
+		  } else if ((plateau[1][1][1] == Pa) && (plateau[2][2][2] == Pa || plateau[2][2][0] == Pa)) {
+		  plateau[0][0][2] = Pe;
+		meilleurcoup = true;
+		 
+		 } else if ((plateau[1][1][1] == Pa) && (plateau[0][2][0] == Pa || plateau[0][2][2] == Pa)) {  
+                 plateau[2][0][2] = Pe;
+		  } else if ((plateau[1][1][1] == Pa) && (plateau[0][2][0] == Pa || plateau[0][2][2] == Pa)) {  
+		 plateau[2][0][0] = Pe;
+	        } else if ((plateau[1][1][1] == Pa) && (plateau[2][0][2] == Pa || plateau[2][0][0] == Pa)) {
+		  plateau[0][2][0] = Pe;
+		   } else if ((plateau[1][1][1] == Pa) && (plateau[2][0][2] == Pa || plateau[2][0][0] == Pa)) {
+		  plateau[0][2][2] = Pe;
+                meilleurcoup = true;
+		}
+   
+   }
+  }
+  }
+  return meilleurcoup;
+  }
 
-
-        }
