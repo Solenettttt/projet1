@@ -86,3 +86,21 @@
       (estmin) et (estmax) sont les 2 fonctions possibles dans le cas de cette algorithme.
       estmin représente donc l'ia qui doit minimiser ses pertes.
       estmax représente le joueur qui veut maximiser les pertes de l'ia.
+      
+      //
+      Principe de l'algorithme minimax:
+      D'après le site (https://blog.engineering.publicissapient.fr/2011/09/28/lalgorithme-minimax/)
+     
+     Posons le problème…
+
+Le problème d’un agent rationnel dans le cadre d’un jeu peut se résumer en une phrase : « Trouver le meilleur coup pour gagner la partie ! ». Posons le problème :
+
+    L’état initial : le plateau du jeu à un instant T
+    Les joueurs : quel joueur est en train de jouer ?
+    Les actions : les coups légaux (qui respectent les règles) possibles pour un état du plateau de jeu donné.
+    Le modèle de transition : permet de déterminer les nouveaux états du plateau de jeu en fonction des actions choisies précédemment.
+(schéma sur le site fourni en lien)
+Les états représentent les nœuds, les actions représentent les liens, qui permettent de déduire des états enfants et ainsi de suite (//les états parents et grands parents étant les premiers de l'arbre). Dans le cadre des jeux, le graphe est souvent acyclique et orienté, c’est-à-dire qu’aucun lien ne permet de revenir à un nœud déjà exploré. Il y a différentes façon d’explorer un graphe mais elles appartiennent souvent à deux grandes familles : l’exploration en largeur d’abord et l’exploration en profondeur d’abord.
+
+L’objectif de l’agent rationnel est donc d’explorer l’arbre et donc d’évaluer un maximum de coups d’avance afin de déterminer quel sera le meilleur coup à jouer par la suite. 
+(voire animation sur le site fourni en lien)
