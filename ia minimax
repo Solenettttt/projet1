@@ -1,7 +1,7 @@
 // partie IA
 
                   public static int bestmove{        // fonction calculant le meilleur coup en fonction des cases disponibles à chaque coup 
-			  bestscore=-1000  (-1 x 1000) ainsi on donne un "poids" au meilleur score possible pour le joueur s'il fait un certain "mouv"
+			  bestscore=-1000  // (-1 x 1000) ainsi on donne un "poids" au meilleur score possible pour le joueur s'il fait un certain "mouv"
 		          int move;
 	                  for(int i=0,i<2;i++){
 		          for(int j=0,j<2;j++){
