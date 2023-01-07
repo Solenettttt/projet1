@@ -23,9 +23,9 @@
 			  }
 		  }
 				score = {  // 0 = égalité/ 1= victoire de l'ia/ -1= victoire du joueur 
-					A = 1
-					B = -1
-					C = 0	
+					A = 1;
+					B = -1;
+					C = 0;	
 					}
 		   
 		 public static int minimax(String[][][] plateau, profondeur, estmax){
@@ -38,7 +38,7 @@
 					}
 					
 	       if(minimax = estmax){
-		       bestscore= 1000
+		       bestscore= 1000;
 			  for(i=0,i<2;i++){
 		          for(j=0,j<2;j++){
 			  for(k=0,k<2;k++){
