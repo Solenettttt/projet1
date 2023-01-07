@@ -1,13 +1,13 @@
 // partie IA
 
                   public static int bestmove{        // fonction calculant le meilleur coup en fonction des cases disponibles à chaque coup 
-			  bestscore=-1000  // (-1 x 1000) ainsi on donne un "poids" au meilleur score possible pour le joueur s'il fait un certain "mouv"
+			  bestscore=-1000; // (-1 x 1000) ainsi on donne un "poids" au meilleur score possible pour le joueur s'il fait un certain "mouv"
 		          int move;
 	                  for(int i=0,i<2;i++){
 		          for(int j=0,j<2;j++){
 			  for(int k=0,k<2;k++){
 		        if (plateau[i][j][k]=='-'){
-			plateau[i][j][k]= R // pion ia
+			plateau[i][j][k]= R; // pion ia
 			score = minimax(String[][][] plateau, 0, false); // non défini mais c'est la fonction qui permet de trouver le min et max pour le joueur et l'ia
                         plateau[i][j][k] = '-';
 				bestscore = max(score,bestscore);
@@ -60,7 +60,7 @@
 		       
 		       else{
 			    if(minimax = estmin){
-		       bestscore= -1000
+		       bestscore= -1000;
 			  for(i=0,i<2;i++){
 		          for(j=0,j<2;j++){
 			  for(k=0,k<2;k++){
