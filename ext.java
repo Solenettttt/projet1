@@ -109,9 +109,7 @@ public class ext {
 				case(5):i=2;
 				break;
 				
-				case(6):i=2
-			        break;
-					
+									
 				default: i=0;
 				break;
         };
@@ -146,35 +144,39 @@ public class ext {
 	}
 
 		// On définit une liste composée des noms de chaque joueurs; la taille de la liste est défini en fonction du nombre de joueur 
-    public static void remplissagematricenomjoueur(int i, String[] nom) {
+    public static void remplissagematricenomjoueur(int i, String[] nom, int js) {
 					//liste n'est jamais affiché, seulement utile pour répertorier et prendre le bon nom du joueur acutel
-				int diff = 0;				
-				for (int j = 0; j < i; j++) {
-					int k = j + 1;
-					System.out.println("Prenom du joueur  " + k + " :");
-					nom[j] = Lire.S();
+				int diff = 0;
+	    			if (js == 5){
+					System.out.println("Prenom du joueur 1 : ");
+					nom[0] = Lire.S();
+				} else if {	
+					for (int j = 0; j < i; j++) {
+						int k = j + 1;
+						System.out.println("Prenom du joueur  " + k + " :");
+						nom[j] = Lire.S();
 
-					if (diff == 1) {
-						while (nom[diff - 1].equals(nom[diff])) {
-							System.out.println(" \n" + "Donnez un autre prenom joueur " + k + " : ");
-							nom[j] = Lire.S();
+						if (diff == 1) {
+							while (nom[diff - 1].equals(nom[diff])) {
+								System.out.println(" \n" + "Donnez un autre prenom joueur " + k + " : ");
+								nom[j] = Lire.S();
+							}
 						}
-					}
-					if (diff == 2) {
-						while ((nom[diff - 1].equals(nom[diff])) || (nom[diff - 2].equals(nom[diff]))) {
-							System.out.println(" \n" + "Donnez un autre prenom joueur " + k + " : ");
-							nom[j] = Lire.S();
+						if (diff == 2) {
+							while ((nom[diff - 1].equals(nom[diff])) || (nom[diff - 2].equals(nom[diff]))) {
+								System.out.println(" \n" + "Donnez un autre prenom joueur " + k + " : ");
+								nom[j] = Lire.S();
+							}
 						}
-					}
-					if (diff == 3) {
-						while ((nom[diff - 1].equals(nom[diff])) || (nom[diff - 2].equals(nom[diff])) || (nom[diff - 3].equals(nom[diff]))) {
-							System.out.println(" \n" + "Donnez un autre prenom joueur " + k + " : ");
-							nom[j] = Lire.S();
+						if (diff == 3) {
+							while ((nom[diff - 1].equals(nom[diff])) || (nom[diff - 2].equals(nom[diff])) || (nom[diff - 3].equals(nom[diff]))) {
+								System.out.println(" \n" + "Donnez un autre prenom joueur " + k + " : ");
+								nom[j] = Lire.S();
+							}
 						}
+						diff++;			//vérifie que les noms choisi sont tous différents entre eux
 					}
-					diff++;			//vérifie que les noms choisi sont tous différents entre eux
 				}
-
     }
 
 
@@ -434,12 +436,12 @@ public class ext {
                 } else if (plateau[k][i][0] == Pa && plateau[k][i][1] == Pa && plateau[k][i][2] == Pa && plateau[k][i][0] != "O") {
                     System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
                     victoire = true;       // victoire sur la même case
-	       } else if (plateau[k][0][0] == Pa && plateau[k][1][1] == Pa && plateau[k][2][2] == Pa && plateau[k][i][0] != "O"){
-		    System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
-                    victoire = true;   // victoire ascendante/descendante sur diagonale 1
-	       } else if (plateau[k][0][2] == Pa && plateau[k][1][1] == Pa && plateau[k][2][0] == Pa && plateau[k][i][0] != "O"){
-		       System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
-                    victoire = true;   // victoire ascendante/descendante sur diagonale 2  
+	       } else if (plateau[0][0][k] == Pa && plateau[1][1][k] == Pa && plateau[2][2][k] == Pa && plateau[0][0][k] != "-") {
+                    System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
+                    victoire = true;    // victoire sur diagonale 1 même taille
+	       } else if (plateau[0][2][k] == Pa && plateau[1][1][k] == Pa && plateau[2][0][k] == Pa && plateau[0][2][k] != "-") {
+                    System.out.println("*** Bravo ! " + Ja + " a gagné la partie 2! ***");
+                    victoire = true;   // victoire sur diagonale 2 même taille
                 } else if ((plateau[0][1][1] == Pa) && ((plateau[0][0][0] == Pa && plateau[0][2][2] == Pa) || (plateau[0][0][2] == Pa && plateau[0][2][0] == Pa))) { // 1ere ligne
                     System.out.println("*** Bravo ! " + Ja + " a gagné la partie ! ***");
                     victoire = true;
